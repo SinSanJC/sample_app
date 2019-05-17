@@ -1,0 +1,36 @@
+@import  "bootstrap" ;
+
+$blue: #2c89e6;
+$blue-light: rgba(#2c89e6, .50);
+
+.bg-blue{
+	background-color: $blue;
+}
+
+.bg-blue-light{
+	background-color: $blue-light;
+}
+
+.nav-link a{
+	color: #ffffff80;
+	text-decoration: none;
+    font-weight: bold;
+    &:hover{
+    	color: white;
+    }
+}
+
+#logo {
+	font-size: 1.7em;
+	text-transform: uppercase;
+	font-weight: bold;
+	&:hover{
+	color: #004284;
+	text-decoration: none;
+	}
+}
+
+footer a{
+	text-decoration: none !important;
+	color: white;
+}

@@ -9,6 +9,12 @@
   </head>
 
   <body>
-    <%= yield %>
+  	<%= render 'layouts/header' %>
+
+    <div class="container bg-blue-light my-3">
+      <%= yield %>
+    </div>
+
+    <%= render 'layouts/footer' %>
   </body>
 </html>
