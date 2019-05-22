@@ -11,15 +11,30 @@ $blue-light: rgba(#2c89e6, .50);
 	background-color: $blue-light;
 }
 
-body,html{
-    height:100%;
+html{
+	position: relative;
+    min-height: 100%;
+}
+
+body{
+	min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main{
+	flex-grow: 1;
+}
+
+footer{
+	flex-grow: 0;
 }
 
 .nav-link a{
 	color: #ffffff80;
 	text-decoration: none;
     font-weight: bold;
-    &:hover{
+    &:hover,  &.active{
     	color: white;
     }
 }

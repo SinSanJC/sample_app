@@ -21,10 +21,6 @@
   <%= form.password_field :password_confirmation, class: "form-control" %>
 </div>
 
-<div class="row">
-  <div class="col-md-6 col-12">
-    <%= form.submit "Sign Up Now", class: "btn btn-outline-primary  btn-block" %>
-  </div>
-</div>
+<%= form.submit yield(:button_text), class: "btn btn-outline-primary  btn-block" %>
 
 <% end %>

@@ -1,3 +1,12 @@
 <% provide(:title, "About") %>
-<h1>About</h1>
-<p>Pagina estatica ABOUT</p>
+
+<h1 class="text-center"> <%= yield(:title) %></h1>
+<div class="text-center">
+	<%= image_tag "rails.png", class: "img-fluid pb-3", alt: "Logo Rails", style: "width: 50%;" %>
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lectus eros, volutpat in imperdiet et, fringilla sed ligula. Nullam posuere, sem vulputate dignissim pharetra, eros lacus egestas magna, ac porttitor urna elit vel turpis. Cras porttitor vehicula leo, non hendrerit risus. Aenean eget efficitur turpis. Aenean fringilla posuere luctus. Phasellus eu eleifend purus. Maecenas ut aliquam lorem, et eleifend quam. Nullam blandit efficitur fringilla. Aliquam quis felis pretium, imperdiet eros at, sodales quam.</p>
+<p>Sed convallis suscipit nibh. Vestibulum lectus turpis, iaculis suscipit cursus et, posuere non purus. Quisque convallis consequat metus. Sed at elit facilisis, tincidunt elit vel, varius augue. Nulla efficitur eget massa eget dictum. Donec a pretium ipsum. Duis scelerisque ut nibh id interdum. Nunc condimentum, nisl sit amet condimentum ullamcorper, tortor leo lobortis erat, nec pulvinar dolor sapien sit amet turpis. Sed tincidunt nibh ac nibh semper, ut iaculis urna eleifend.</p>
+<p>Aenean pulvinar ut est eu dapibus. Curabitur et sagittis tortor, eget vulputate leo. Quisque feugiat risus eget dui aliquam, posuere efficitur lectus tristique. Duis at ligula tincidunt sapien aliquam feugiat ac et lorem. Quisque sed congue tortor. Etiam in ipsum ut orci pellentesque lobortis. Cras gravida elit id nisl elementum, eget viverra ex blandit. Sed condimentum, justo sit amet ultrices venenatis, purus sem dictum ante, in tempus eros mi nec quam. Vestibulum eget nisi ut felis sagittis commodo. Suspendisse eget consectetur leo. Vestibulum pellentesque mauris odio, ac tincidunt augue rhoncus eu.</p>
+<div class="text-right">
+	<a href="https://www.linkedin.com/in/adrianjc/">Adrian Jimenez</a>
+</div>

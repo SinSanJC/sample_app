@@ -1,6 +1,15 @@
-<h1>Editing User</h1>
-
-<%= render 'form', user: @user %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<% provide(:title, "Editing User") %>
+<% provide(:button_text, 'Save changes') %>
+<div class="container h-100 my-5">
+	<div class="row justify-content-center h-100 align-items-center">
+		<div class="col-md-6 col-12">
+			<div class="py-3">
+				<h1 class="text-center">Editing User</h1>
+			</div>
+	
+			<div class="container py-3">
+				<%= render 'form', user: @user %>
+			</div>	
+		</div>
+	</div>
+</div>
