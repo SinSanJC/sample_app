@@ -3,11 +3,15 @@ class User
 	include Mongoid::Timestamps
 	include ActiveModel::SecurePassword
 
+	attr_accessor :remember_token
+
 	before_save { self.email = email.downcase }
 
 	field :name, type: String
 	field :email, type: String
 	field :password_digest, type: String
+	field :remember_digest, type: String
+
 	has_secure_password
 	
 	validates :name,  presence: true, length: { maximum: 50 }
@@ -18,6 +22,30 @@ class User
 
 	validates :password, presence: true, length: { minimum: 6 }
 
-	
+	def User.digest(string)
+		cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+		BCrypt::Password.create(string, cost: cost)
+	end
+
+	def User.new_token
+		SecureRandom.urlsafe_base64
+	end	
+
+	def remember
+		self.remember_token = User.new_token
+		update_attribute(:remember_digest, User.digest(remember_token))
+	end
+
+	def authenticated?(remember_token)
+		if remember_digest.nil?
+			false 
+		else
+			BCrypt::Password.new(remember_digest).is_password?(remember_token)
+		end
+	end
+
+	def forget
+		update_attribute(:remember_digest, nil)
+	end
 
 end
