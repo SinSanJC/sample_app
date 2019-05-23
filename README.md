@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## VERSIONS
 
-Things you may want to cover:
+* Ruby version 2.2.6
 
-* Ruby version:  2.2.6
+* Rails 5.1.6
 
-* System dependencies
+* MondoDB 4.0.9 
 
-* Configuration
+## Database initialization
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```sh
+$ rails db:seed
+```
