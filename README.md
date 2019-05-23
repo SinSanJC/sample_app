@@ -1,12 +1,12 @@
 # README
 
-## VERSIONS
+## Versions
 
-* Ruby version 2.2.6
+* Ruby 2.2.6
 
 * Rails 5.1.6
 
-* MondoDB 4.0.9 
+* MongoDB 4.0.9 
 
 ## Database initialization
 
