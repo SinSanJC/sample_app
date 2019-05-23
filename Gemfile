@@ -57,3 +57,6 @@ gem 'jquery-rails'
 gem 'rails-controller-testing'
 
 gem 'bcrypt', '3.1.12'
+gem 'faker', '1.8.7'
+gem "will_paginate_mongoid"
+gem 'will_paginate-bootstrap4'

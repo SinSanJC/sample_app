@@ -84,6 +84,26 @@ footer a{
 	}
 }
 
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $blue;
+    &:last-of-type{
+    	border-bottom: none;
+    }
+  }
+}
+
+nav{
+	ul.pagination{
+		justify-content: center !important;
+	}
+}
+
+
 /* Debug */
 
 @mixin box_sizing {
