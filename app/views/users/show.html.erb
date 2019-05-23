@@ -1,26 +1,18 @@
 <% provide(:title, @user.name) %>
 
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
+<div class="row">
+  <aside class="col-md-4 mb-3">
+    <%= render 'shared/user_info' %>
+  </aside>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.created_at %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.updated_at %>
-</p>
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>
+      <h3 class="text-center">(<%= @user.microposts.count %>) Microposts of <%= @user.name %> </h3>
+      <hr>
+      <ol class="list-unstyled microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
+</div>

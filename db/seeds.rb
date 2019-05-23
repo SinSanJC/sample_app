@@ -24,3 +24,10 @@ User.create!(name:  "adrian",
 				activated: true,
 				activated_at: Time.zone.now)
 end
+
+users = User.asc(:created_at).limit(6)
+
+5.times do
+	content = Faker::Lorem.sentence(5)
+	users.each { |user| user.microposts.create!(content: content) }
+end

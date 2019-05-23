@@ -1,3 +1,22 @@
+<% if logged_in? %>
+<% provide(:title, "Micropost Feed") %>
+  <div class="row">
+    <aside class="col-md-4">
+      <div>
+        <%= render 'shared/user_info' %>
+      </div>
+      <div class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </div>
+    </aside>
+    <div class="col-md-8">
+      <h3 class="text-center"><%= yield(:title) %></h3>
+      <hr>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+<% provide(:title, "Home") %>
 <div class="text-center">
 	<div>
 		<h1>Welcome to the Sample App</h1>
@@ -13,3 +32,4 @@
 	</div>
 		
 </div>
+<% end %>

@@ -8,6 +8,8 @@ class User
 	before_save   :downcase_email
 	before_create :create_activation_digest
 
+	has_many :microposts, dependent: :destroy
+
 	field :name, type: String
 	field :email, type: String
 	field :password_digest, type: String
@@ -72,5 +74,9 @@ class User
 	def send_activation_email
 		UserMailer.account_activation(self).deliver_now
 	end	
+
+	def feed
+		microposts
+	end
 
 end

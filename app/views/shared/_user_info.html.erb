@@ -1,0 +1,8 @@
+<div class="p-3 bg-grey">
+  <div class="media">
+    <%= link_to gravatar_for(@user), @user, class: "d-flex align-self-start mr-3" %>
+  <div class="media-body">
+    <h5 class="mt-0 text-capitalize"><%= link_to @user.name, current_user, class: "mt-2 text-capitalize font-weight-bold"  %></h5>
+    <p><%= pluralize(current_user.microposts.count, "micropost") %></p>
+  </div>
+</div>

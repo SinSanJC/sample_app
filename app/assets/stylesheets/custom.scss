@@ -2,9 +2,14 @@
 
 $blue: #2c89e6;
 $blue-light: rgba(#2c89e6, .50);
+$grey: #eceff1;
 
 .bg-blue{
 	background-color: $blue;
+}
+
+.bg-grey{
+	background-color: $grey;	
 }
 
 .bg-blue-light{
@@ -95,6 +100,24 @@ footer a{
     	border-bottom: none;
     }
   }
+}
+
+.text-area-post{
+	resize: vertical; 
+	max-height: 200px;
+	min-height: 80px;
+}
+
+.microposts{
+	li{
+		border-bottom: 1px solid $blue;
+		&:first-of-type{
+	    	padding-top: none !important;
+	    }
+	    &:last-of-type{
+	    	border-bottom: none !important;
+	    }	
+	}
 }
 
 nav{
