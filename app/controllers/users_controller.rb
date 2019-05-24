@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  require 'will_paginate/array'
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:index, :edit, :update]
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
 
@@ -65,6 +66,21 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+
+  def following
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @users = User.find(@user.following).paginate(page: params[:page], per_page: 8)
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @users = User.find(@user.followers).paginate(page: params[:page], per_page: 8)
+    render 'show_follow'
   end
 
   private

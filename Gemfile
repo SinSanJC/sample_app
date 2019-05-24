@@ -60,3 +60,6 @@ gem 'bcrypt', '3.1.12'
 gem 'faker', '1.8.7'
 gem "will_paginate_mongoid"
 gem 'will_paginate-bootstrap4'
+
+gem 'carrierwave-mongoid'
+gem 'mini_magick', '4.7.0'

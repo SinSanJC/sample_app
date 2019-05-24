@@ -9,6 +9,9 @@ class User
 	before_create :create_activation_digest
 
 	has_many :microposts, dependent: :destroy
+	has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", inverse_of: :follower, dependent: :destroy
+	has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", inverse_of: :followed, dependent: :destroy
+
 
 	field :name, type: String
 	field :email, type: String
@@ -76,7 +79,28 @@ class User
 	end	
 
 	def feed
-		microposts
+		Micropost.from_users_followed_by(self)
 	end
+
+	def follow(other_user)
+		active_relationships.create(followed_id: other_user._id)
+	end
+
+	def unfollow(other_user)
+		active_relationships.find_by(followed_id: other_user._id).delete
+	end
+
+	def following
+		Relationship.where(follower_id: _id).pluck(:followed)
+	end
+	
+	def followers
+		Relationship.where(followed_id: _id).pluck(:follower)
+	end
+
+	def following?(other_user)
+		return true if active_relationships.find_by(followed_id: other_user._id)
+	end
+
 
 end

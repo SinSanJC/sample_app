@@ -1,0 +1,23 @@
+<% provide(:title, @title) %>
+<div class="row">
+	  <aside class="col-md-4 mb-3">
+    <%= render 'shared/user_info' %>
+    <div class="text-center mt-2">
+      <%= render 'shared/stats' %>
+    </div>
+    <div class="text-center mt-2">
+      <%= render 'follow_form' if logged_in? %>
+    </div>
+    
+  </aside>
+  <div class="col-md-8">
+   <h3 class="text-center"><%= @title %></h3>
+   <hr>
+    <% if @users.any? %>
+      <ul class="users follow">
+        <%= render @users %>
+      </ul>
+      <%= will_paginate %>
+    <% end %>
+  </div>
+</div>

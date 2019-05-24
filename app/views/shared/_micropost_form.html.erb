@@ -4,4 +4,7 @@
     <%= f.text_area :content, placeholder: "Compose new micropost...", class: "form-control my-3 text-area-post" %>
   </div>
   <%= f.submit "Post", class: "btn btn-block btn-primary" %>
+    <div class="picture mt-3 overflow-hidden">
+    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'file_input'  %>
+  </div>
 <% end %>
